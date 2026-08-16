@@ -37,7 +37,7 @@ body{
     margin: auto;
     padding: 20px 0;
     align-items: center;
-    justify-content: space-between;  /* fixed typo: was space-betweeen */
+    justify-content: space-between;
 }
 .navbar .logo{
     width: 160px;
@@ -69,7 +69,7 @@ body{
 }
 .info h1{
     font-size: 50px;
-    color: rgb(36,32,30);           /* fixed: was "black rgb(...)" (invalid) */
+    color: rgb(36,32,30);
     margin-top: 10px;
 }
 .info h3{
@@ -79,12 +79,12 @@ body{
     margin-top: 10px;
 }
 .info span{
-    color: rgb(230,104,59);         /* fixed: was "pastel red rgb (...)" (invalid) */
+    color: rgb(230,104,59);
 }
 .info a{
     text-decoration: none;
     color: #fff;
-    background: rgb(36,32,30);      /* fixed: was "black (...)" (invalid) */
+    background: rgb(36,32,30);
     margin: 26px 0;
     padding: 10px 18px;
     border-radius: 10px;
@@ -92,7 +92,7 @@ body{
     transition: .4s ease;
 }
 .info a:hover{
-    background: rgb(59,174,209);    /* fixed: was "skyblue rgb(...)" (invalid) */
+    background: rgb(59,174,209);
 }
 
 /* ============ HERO IMAGE (cutout — appears ONLY in .main) ============ */
@@ -111,7 +111,7 @@ body{
     bottom: 0;
     transition: left .6s ease;
 }
-.image:hover .profile-img{          /* fixed: was .girl, a class that didn't exist */
+.image:hover .profile-img{
     left: 55%;
 }
 
@@ -228,71 +228,62 @@ body{
     font-weight: bold;
 }
 
-/* ── Experience ── */
-#experience {
-  padding: 7rem 6rem;
+/* ============ EXPERIENCE ============ */
+/* Uses the same card language as .project-card / .skill-item so it reads
+   as part of the same design system, with the site's accent color marking
+   each entry on the timeline. */
+.experience{
+    padding: 80px 7%;
+    text-align: center;
 }
-.timeline { 
-     background: #fff;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+.experience h2 span{ color: rgb(230,104,59); }
+
+.timeline{
+    max-width: 700px;
+    margin: 40px auto 0;
     text-align: left;
+}
+
+.timeline-item{
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+    border-left: 4px solid rgb(230,104,59);
+    padding: 22px 26px;
+    margin-bottom: 24px;
     transition: .3s ease;
 }
-.timeline::before {
-  content: '';
-  position: absolute; 
-  left: 0;
-   top: 0; 
-   bottom: 0;
-  width: 1px; 
-  background: var(--border);
+.timeline-item:hover{
+    transform: translateY(-4px);
+}
+.timeline-item:last-child{
+    margin-bottom: 0;
 }
 
-.timeline-item {
-  position: relative;
-  margin-bottom: 3rem;
-  padding-left: 2rem;
-}
-
-.timeline-item::before {
-  content: '';
-  position: absolute; 
-  left: -2.4rem; 
-  top: 0.4rem;
-  width: 7px; 
-  height: 7px;
-  background: var(--accent);
-  border-radius: 50%;
-}
-.timeline-year {
-  font-family: var(--mono);
-  font-size: 0.72rem;
-  color: var(--accent);
-  letter-spacing: 0.1em;
-  margin-bottom: 0.4rem;
-}
-.timeline-title {
-  font-size: 1rem;
-  font-weight: 700;
-  color: rgb(230,104,59);
-  margin-bottom: 0.3rem;
-  letter-spacing: -0.01em;
-}
-.timeline-org {
-   display: inline-block;
-    margin: 12px 16px 18px;
-    text-decoration: none;
-    color: rgb(230,104,59);
+.timeline-year{
+    font-size: 13px;
     font-weight: bold;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    color: rgb(230,104,59);
+    margin-bottom: 6px;
 }
-.timeline-desc {
-  font-family: var(--mono);
-  font-size: 0.78rem;
-  color: var(--muted);
-  line-height: 1.8;
-  max-width: 520px;
+.timeline-title{
+    font-size: 20px;
+    font-weight: bold;
+    color: rgb(36,32,30);
+    margin-bottom: 4px;
+}
+.timeline-org{
+    font-size: 15px;
+    font-weight: 600;
+    color: #666;
+    margin-bottom: 12px;
+}
+.timeline-desc{
+    font-size: 15px;
+    line-height: 1.7;
+    color: #333;
 }
 
 /* ============ RESUME ============ */
@@ -314,66 +305,6 @@ body{
 .resume-btn:hover{
     background: rgb(59,174,209);
 }
-
-#experience {
-  padding: 7rem 6rem;
-}
-.timeline { position: relative;
-     padding-left: 2rem; 
-     margin-top: 3rem; 
-    }
-.timeline::before {
-  content: '';
-  position: absolute; 
-  left: 0; 
-  top: 0;
-  bottom: 0;
-  width: 1px;
-   background: var(--border);
-}
-.timeline-item {
-  position: relative;
-  margin-bottom: 3rem;
-  padding-left: 2rem;
-}
-.timeline-item::before {
-  content: '';
-  position: absolute; 
-  left: -2.4rem; 
-  top: 0.4rem;
-  width: 7px;
-   height: 7px;
-  background: var(--accent);
-  border-radius: 50%;
-}
-.timeline-year {
-  font-family: var(--mono);
-  font-size: 0.72rem;
-  color: var(--accent);
-  letter-spacing: 0.1em;
-  margin-bottom: 0.4rem;
-}
-.timeline-title {
-  font-size: 1rem;
-  font-weight: 700;
-  margin-bottom: 0.3rem;
-  letter-spacing: -0.01em;
-}
-.timeline-org {
-  font-family: var(--mono);
-  font-size: 0.78rem;
-  color: var(--muted);
-  margin-bottom: 0.75rem;
-}
-.timeline-desc {
-  font-family: var(--mono);
-  font-size: 0.78rem;
-  color: var(--muted);
-  line-height: 1.8;
-  max-width: 520px;
-}
-
-
 
 /* ============ CONTACT ============ */
 .contact{
@@ -458,5 +389,8 @@ body{
     .about{
         flex-direction: column;
         text-align: center;
+    }
+    .timeline-item{
+        padding: 18px 20px;
     }
 }
