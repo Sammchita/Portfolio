@@ -227,25 +227,42 @@ body{
     color: rgb(230,104,59);
     font-weight: bold;
 }
+
 /* ── Experience ── */
 #experience {
   padding: 7rem 6rem;
 }
-.timeline { position: relative; padding-left: 2rem; margin-top: 3rem; }
+.timeline { 
+     background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+    text-align: left;
+    transition: .3s ease;
+}
 .timeline::before {
   content: '';
-  position: absolute; left: 0; top: 0; bottom: 0;
-  width: 1px; background: var(--border);
+  position: absolute; 
+  left: 0;
+   top: 0; 
+   bottom: 0;
+  width: 1px; 
+  background: var(--border);
 }
+
 .timeline-item {
   position: relative;
   margin-bottom: 3rem;
   padding-left: 2rem;
 }
+
 .timeline-item::before {
   content: '';
-  position: absolute; left: -2.4rem; top: 0.4rem;
-  width: 7px; height: 7px;
+  position: absolute; 
+  left: -2.4rem; 
+  top: 0.4rem;
+  width: 7px; 
+  height: 7px;
   background: var(--accent);
   border-radius: 50%;
 }
@@ -259,14 +276,16 @@ body{
 .timeline-title {
   font-size: 1rem;
   font-weight: 700;
+  color: rgb(230,104,59);
   margin-bottom: 0.3rem;
   letter-spacing: -0.01em;
 }
 .timeline-org {
-  font-family: var(--mono);
-  font-size: 0.78rem;
-  color: var(--muted);
-  margin-bottom: 0.75rem;
+   display: inline-block;
+    margin: 12px 16px 18px;
+    text-decoration: none;
+    color: rgb(230,104,59);
+    font-weight: bold;
 }
 .timeline-desc {
   font-family: var(--mono);
